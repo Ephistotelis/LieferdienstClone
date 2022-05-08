@@ -1,0 +1,87 @@
+:root {
+    --header: orange;
+    --basketBg: ;
+    --basketButton: ;
+    --background: ;
+    --categoriebg --
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    background-color: orange;
+}
+
+.headerLogo {
+    display: flex;
+    align-items: center;
+}
+
+
+/*Content Main*/
+
+.contentMain {
+    display: flex;
+    justify-content: space-between;
+    min-height: 92vh;
+    height: 200vh;
+}
+
+
+/* Seller Main */
+
+.sellerMain {
+    margin-left: 250px;
+    margin-right: 250px;
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background-color: rgb(124, 99, 52);
+}
+
+
+/* Basket Main*/
+
+.basketMain {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: orangered;
+    width: 20%;
+    height: 100vh;
+}
+
+.basketHeader {
+    position: sticky;
+    top: 0;
+    height: 50px;
+    background-color: aliceblue;
+}
+
+.basketContents {
+    overflow: scroll;
+    overflow-x: hidden;
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    max-height: 750px;
+}
+
+.basketPayment {
+    background-color: aliceblue;
+    height: 150px;
+}
+
+
+/* Footer Maim*/
+
+footer {
+    height: 12vh;
+    background-color: blue;
+}
