@@ -26,12 +26,7 @@ let sellerList = [{
 
 //render = seller cats, seller info, basket items
 const sellerJSON = sellerList;
-let sellerAdress = document.getElementById('sellerAdress');
-let sellerName = document.getElementById('sellerName');
-let sellerInfo = document.getElementById('deliverInfos');
-let sellerDescribtion = document.getElementById('sellerDescribtion');
-let sellerCategories = document.getElementById('sellerCategories');
-let sellerDishesContent = document.getAnimations('sellerDishesContent');
+
 
 function render(type, index) {
     let sellerAdress = document.getElementById('sellerAdress');
@@ -45,7 +40,7 @@ function render(type, index) {
             sellerName.innerHTML = sellerJSON[index]["name"]
             sellerInfo.innerHTML = templateSellerInfo(index);
             sellerDescribtion.innerHTML = templateDescribtion(index);
-            // templateCategories(index);
+            templateCategories(index);
 
             break;
 
@@ -59,10 +54,17 @@ function render(type, index) {
 function templateCategories(index) {
     let sellerCategories = document.getElementById('sellerCategories');
     for (let i = 0; sellerList[index]["dishCategorie"].length; i++) {
-        sellerCategories.innerHTML += `
-        <a href="#">${sellerList[index]["dishCategorie"][i]}</a>
-        `
+        sellerCategories.innerHTML += template(index, i);
     }
+
+    function template(index, i) {
+        return `
+    <a href="#">${sellerList[index]["dishCategorie"][i]}</a>
+    `
+    }
+
+
+
 }
 
 function templateDescribtion(index) {
