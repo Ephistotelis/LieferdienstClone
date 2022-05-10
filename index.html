@@ -8,16 +8,17 @@
     <title>Lieferturm</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js"></script>
+    <script src="seller.JSON"></script>
 </head>
 
-<body>
+<body onload="render('sellerInfo', 0)">
     <header>
         <div class="headerLogo">
             <img src="img/chess-41-64.png" alt="Logo">
             <p>Lieferturm</p>.de
         </div>
         <div class="headerAdress">
-            <a href="#">Musterstraße 34, 12345 Musterstadt</a>
+            <a href="#" id="sellerAdress">Musterstraße 34, 12345 Musterstadt</a>
         </div>
         <div class="headerNav">
             <div class="navLanguages">
@@ -34,13 +35,13 @@
             <div class="sellerHeaderLogo"><img src="img/LogoMakr-8rhm1U.png" alt="sellerHeaderLogo"></div>
             <div class="sellerInfos">
                 <div class="sellerName">
-                    <p>Pizza Tornado</p>
+                    <p id="sellerName">Prontonio Pizza</p>
                     <div class="rating">
                         <img src="img/star-32.png" alt="sterne"><img src="img/star-32.png" alt="sterne"><img src="img/star-32.png" alt="sterne"><img src="img/star-32.png" alt="sterne"><img src="img/star-4-32.png" alt="sterne">
                         <a href="#">(64 Bewertungen)</a>
                     </div>
 
-                    <div class="deliverInfos">
+                    <div class="deliverInfos" id="deliverInfos">
                         <img src="img/time-32.png" alt="Uhr">
                         <p>20-45min</p>
                         <img src="img/mounting.png" alt="Fahrrad">
@@ -48,7 +49,7 @@
                         <img src="img/shopping-bag-32.png" alt="Tasche">
                         <p>Min. 20,00€</p>
                     </div>
-                    <div class="sellerDescribtion">
+                    <div class="sellerDescribtion" id="sellerDescribtion">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi distinctio at minus veniam non illum inventore quis dignissimos voluptatem quaerat, eligendi omnis harum. Placeat iste dolores, vel facere impedit delectus!</p>
                     </div>
                 </div>
@@ -61,14 +62,14 @@
                     </a>
                 </div>
             </div>
-            <div class="sellerCategories">
+            <div class="sellerCategories" id="sellerCategories">
                 <!-- auch sticky wie warenkorb -->
                 <img src="img/zoom-32.png" alt="lupe">
                 <a href="#">Beliebte Gerichte</a><a href="#">Aktionen</a><a href="#">Salate</a><a href="#">Pizza</a><a href="#">Aufläufe</a>
             </div>
             <div class="sellerDishesContent">
                 <div class="dishesCategorieFD">
-                    <!-- diese kategorie is fixen!! -->
+                    <!-- diese kategorie is fix!! -->
                     Beliebte Gerichte
                 </div>
                 <div class="dishesSingleDish">

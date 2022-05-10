@@ -1,0 +1,23 @@
+fucntionen:
+render
+-seller Main
+-seller kategorien
+-seller items
+-warenkorb
+-eng/deutsch translator
+-menu
+-info 
+-favoriten(erstmal nur das das herz orange wird)
+
+rechnen
+-preis für einzelnes dish mit multi amount 
+-gesamtpreis
+-lieferkosten/mindest bestellwert
+
+
+
+CSS:
+-hover effekte
+-warenkorb fixen
+-responsive design 
+-seller logo richtig machen(responsive)

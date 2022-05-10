@@ -1,0 +1,17 @@
+[{
+        "name": "Prontonio Pizza",
+        "adress": "Musterstraße 34, 12345 Musterstadt",
+        "favoriteDishes": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni"],
+        "dishCategorie": ["Pizza", "Salate"],
+        "dishPizza": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni", "Pizza Sucuk"],
+        "dishSalat": ["Feldsalat", "Salat de Cucamber", "Hiertensalat"]
+    },
+    {
+        "name": "Pasta Taxi",
+        "adress": "Musterstraße 78, 54321 Musterstadt",
+        "favoriteDishes": ["Pasta Fungi", "Pasta con Pasta"],
+        "dishCategorie": ["Pasta", "Salate"],
+        "dishPizza": ["Pasta Fungi", "Pasta con Pasta", "Pasta Sucuk", "Pasta con Tuna"],
+        "dishSalat": ["Feldsalat", "Salat de Cucamber", "Hiertensalat"]
+    }
+]
