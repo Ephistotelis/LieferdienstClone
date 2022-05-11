@@ -5,7 +5,12 @@ let sellerList = [{
         "dishCategorie": ["Beliebte Gerichte", "Pizza", "Salate"],
         "dishPizza": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni", "Pizza Sucuk"],
         "dishSalat": ["Feldsalat", "Salat de Cucamber", "Hirtensalat"],
-        "sellerInfo": ["10-35min", "4,50€", "Min 25,00€", "Dieses Restaurant bietet tolle Pizza an!"]
+        "sellerInfo": {
+            "deliveryTime": "10-35min",
+            "deliveryCosts": "4,50€",
+            "minOrderValue": "15,50€",
+            "sellerDescribtion": "Dieses Restaurant bietet tolle Pizza an!"
+        }
     },
     {
         "name": "Pasta Taxi",
@@ -14,7 +19,12 @@ let sellerList = [{
         "dishCategorie": ["Beliebte Gerichte", "Pasta", "Salate"],
         "dishPizza": ["Pasta Fungi", "Pasta con Pasta", "Pasta Sucuk", "Pasta con Tuna"],
         "dishSalat": ["Feldsalat", "Salat de Cucamber", "Hirtensalat"],
-        "sellerInfo": ["20-45min", "2,50€", "Min 20,00€", "Dieses Restaurant bietet tolle Pasta an!"]
+        "sellerInfo": {
+            "deliveryTime": "20-40min",
+            "deliveryCosts": "2,50€",
+            "minOrderValue": "20,00€",
+            "sellerDescribtion": "Dieses Restaurant bietet tolle Pasta an!"
+        }
     }
 ]
 
@@ -24,64 +34,66 @@ let sellerList = [{
 
 
 
-//render = seller cats, seller info, basket items
-const sellerJSON = sellerList;
 
 
-function render(type, index) {
+/*
+@param{string} type - erklärung was mit type gemeint ist
+@
+
+*/
+
+function renderSellerContent(index) {
+
+    renderSellerInfo(index);
+    renderSellerDishes(index);
+}
+
+function renderSellerInfo(index) {
     let sellerAdress = document.getElementById('sellerAdress');
     let sellerName = document.getElementById('sellerName');
     let sellerInfo = document.getElementById('deliverInfos');
     let sellerDescribtion = document.getElementById('sellerDescribtion');
     let sellerCategories = document.getElementById('sellerCategories');
-    switch (type) {
-        case 'sellerInfo':
-            sellerAdress.innerHTML = sellerJSON[index]["adress"]
-            sellerName.innerHTML = sellerJSON[index]["name"]
-            sellerInfo.innerHTML = templateSellerInfo(index);
-            sellerDescribtion.innerHTML = templateDescribtion(index);
-            templateCategories(index);
+    sellerAdress.innerHTML = sellerList[index]["adress"]
+    sellerName.innerHTML = sellerList[index]["name"]
+    sellerInfo.innerHTML = templateSellerInfo(index);
+    sellerDescribtion.innerHTML = `<p>${sellerList[index]["sellerInfo"]["sellerDescribtion"]}</p> `
+}
 
-            break;
+function renderSellerDishes(index) {
+    // categorien, beliebte gerichte, weiter gerichte
+    templateCategories(index);
+}
 
-        case 'sellerInsfo':
+function renderFavDishes(index) {
 
-            break;
+}
 
-    }
+function renderBasket() {
+    //warenkorb
+}
+
+function templateFavDishes(index) {
+
 }
 
 function templateCategories(index) {
     let sellerCategories = document.getElementById('sellerCategories');
-    for (let i = 0; sellerList[index]["dishCategorie"].length; i++) {
-        sellerCategories.innerHTML += template(index, i);
+    sellerCategories.innerHTML = '<img src="img/zoom-32.png" alt="lupe">';
+    for (let i = 0; i < sellerList[index]["dishCategorie"].length; i++) {
+        sellerCategories.innerHTML += `<a href="#">${sellerList[index]["dishCategorie"][i]}</a>`
     }
-
-    function template(index, i) {
-        return `
-    <a href="#">${sellerList[index]["dishCategorie"][i]}</a>
-    `
-    }
-
-
-
 }
 
-function templateDescribtion(index) {
-    return `
-    <p>${sellerList[index]["sellerInfo"][3]}</p>
-    `
-
-}
 
 function templateSellerInfo(index) {
     return `
     <img src="img/time-32.png" alt="Uhr">
-    <p>${sellerList[index]["sellerInfo"][0]}</p>
+    <p>${sellerList[index]["sellerInfo"]["deliveryTime"]}</p>
     <img src="img/mounting.png" alt="Fahrrad">
-    <p>${sellerList[index]["sellerInfo"][1]}</p>
+    <p>${sellerList[index]["sellerInfo"]["deliveryCosts"]}</p>
     <img src="img/shopping-bag-32.png" alt="Tasche">
-    <p>${sellerList[index]["sellerInfo"][2]}</p>
+    <p>${sellerList[index]["sellerInfo"]["minOrderValue"]}</p>
     `
 
 }
