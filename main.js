@@ -2,9 +2,10 @@ let sellerList = [{
         "name": "Prontonio Pizza",
         "adress": "Musterstraße 69, 12345 Musterstadt",
         "favoriteDishes": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni"],
-        "dishCategorie": ["Beliebte Gerichte", "Pizza", "Salate"],
-        "dishPizza": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni", "Pizza Sucuk"],
-        "dishSalat": ["Feldsalat", "Salat de Cucamber", "Hirtensalat"],
+        "dishCategorie": ["Pizza", "Salate"],
+        "CategorieDishes": [{ "dish": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni", "Pizza Sucuk"] },
+            { "dish": ["Feldsalat", "Salat de Cucamber", "Hirtensalat"] }
+        ],
         "sellerInfo": {
             "deliveryTime": "10-35min",
             "deliveryCosts": "4,50€",
@@ -16,9 +17,12 @@ let sellerList = [{
         "name": "Pasta Taxi",
         "adress": "Musterstraße 78, 54321 Musterstadt",
         "favoriteDishes": ["Pasta Fungi", "Pasta con Pasta"],
-        "dishCategorie": ["Beliebte Gerichte", "Pasta", "Salate"],
-        "dishPizza": ["Pasta Fungi", "Pasta con Pasta", "Pasta Sucuk", "Pasta con Tuna"],
-        "dishSalat": ["Feldsalat", "Salat de Cucamber", "Hirtensalat"],
+        "dishCategorie": ["Pasta", "Salate"],
+        "CategorieDishes": [
+            { "dish": ["Pasta Fungi", "Pasta con Pasta", "Pasta Sucuk", "Pasta con Tuna"] },
+            { "dish": ["Feldsalat", "Salat de Cucamber", "Hirtensalat"] }
+        ],
+
         "sellerInfo": {
             "deliveryTime": "20-40min",
             "deliveryCosts": "2,50€",
@@ -28,7 +32,7 @@ let sellerList = [{
     }
 ]
 
-
+//amount adden, jeweilige gerichte zu json machen umd price, info zu adden
 
 
 
@@ -48,6 +52,7 @@ function renderSellerMain(index) {
     renderSellerInfo(index);
     renderFavDishes(index);
     renderSellerCategories(index);
+    renderSellerDishes(index);
 }
 
 function renderSellerInfo(index) {
@@ -62,38 +67,14 @@ function renderSellerInfo(index) {
     sellerDescribtion.innerHTML = `<p>${sellerList[index]["sellerInfo"]["sellerDescribtion"]}</p> `
 }
 
-function renderSellerCategories(index) {
-    templateCategories(index);
-}
-
 function renderFavDishes(index) {
-    templateFavDishes(index)
-}
-
-function renderSellerDishes(index) {
-    // categorien und die dazugehörigen gerichte rendern
-}
-
-function renderBasket() {
-    //warenkorb
-}
-
-function templateFavDishes(index) {
     let sellerDishes = document.getElementById('sellerDishesContent');
     for (let i = 0; i < sellerList[index]["favoriteDishes"].length; i++) {
-        sellerDishes.innerHTML +=
-            `
-        <div class="dishesSingleDish">
-                    <div class="singledishName">${sellerList[index]["favoriteDishes"][i]}</div>
-                    <div class="singledishInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima ab, alias facere eos ipsum veniam adipisci sapiente ea saepe. Ut a, adipisci sit excepturi sunt aliquid corrupti saepe labore?</div>
-                    <div class="singledishPrice">7,90€</div>
-                    <div class="singledishAmount">+</div>
-                </div>
-        `
+        sellerDishes.innerHTML += templateFavDishes(index, i)
     }
 }
 
-function templateCategories(index) {
+function renderSellerCategories(index) {
     let sellerCategories = document.getElementById('sellerCategories');
     sellerCategories.innerHTML = '<img src="img/zoom-32.png" alt="lupe">';
     for (let i = 0; i < sellerList[index]["dishCategorie"].length; i++) {
@@ -101,6 +82,59 @@ function templateCategories(index) {
     }
 }
 
+function renderSellerDishes(index) {
+    // categorien und die dazugehörigen gerichte rendern
+    let sellerDishes = document.getElementById('sellerDishesContent');
+    for (let i = 0; i < sellerList[index]["dishCategorie"].length; i++) {
+        sellerDishes.innerHTML += templateDishCategorie(index, i);
+        renderDishes(index, i);
+    }
+}
+
+function renderDishes(index, i) {
+    let sellerDishes = document.getElementById('sellerDishesContent');
+    for (let j = 0; j < sellerList[index]["CategorieDishes"][i]["dish"].length; j++) {
+        sellerDishes.innerHTML += templateDishes(index, j, i);
+    }
+}
+
+function renderBasket() {
+    //warenkorb
+}
+
+
+
+// Templates
+function templateDishCategorie(index, i) {
+    return `
+    <div class="dishesCategories">
+                    <img src="img/dish-meal-food-produce-italy-breakfast-740020-pxhere.com.jpg" alt="PassendesBild">
+                    <div class="categoriesName">${sellerList[index]["dishCategorie"][i]}</div>
+                </div>
+    `
+}
+
+function templateDishes(index, j, i) {
+    return `        
+        <div class="dishesSingleDish">
+                    <div class="singledishName">${sellerList[index]["CategorieDishes"][i]["dish"][j]}</div>
+                    <div class="singledishInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima ab, alias facere eos ipsum veniam adipisci sapiente ea saepe. Ut a, adipisci sit excepturi sunt aliquid corrupti saepe labore?</div>
+                    <div class="singledishPrice">7,90€</div>
+                    <div class="singledishAmount">+</div>
+                </div>
+        `
+}
+
+function templateFavDishes(index, i) { // info, price und amount adden
+    return `        
+        <div class="dishesSingleDish">
+                    <div class="singledishName">${sellerList[index]["favoriteDishes"][i]}</div>
+                    <div class="singledishInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima ab, alias facere eos ipsum veniam adipisci sapiente ea saepe. Ut a, adipisci sit excepturi sunt aliquid corrupti saepe labore?</div>
+                    <div class="singledishPrice">7,90€</div>
+                    <div class="singledishAmount">+</div>
+                </div>
+        `
+}
 
 function templateSellerInfo(index) {
     return `
