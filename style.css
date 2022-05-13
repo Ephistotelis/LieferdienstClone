@@ -86,7 +86,6 @@ header {
     display: flex;
     justify-content: space-between;
     min-height: 92vh;
-    height: 200vh;
 }
 
 
@@ -121,8 +120,8 @@ header {
     position: absolute;
     left: 49%;
     top: 12vh;
-    width: 8vw;
-    height: 8vw;
+    width: 150px;
+    height: 150px;
 }
 
 .sellerHeaderLogo img {
@@ -203,6 +202,7 @@ header {
 }
 
 .sellerCategories {
+    padding: 10px;
     height: 60px;
     font-size: 18px;
     margin-bottom: 15px;

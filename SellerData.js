@@ -1,4 +1,5 @@
-[{
+//amount adden, jeweilige gerichte zu json machen umd price, info zu adden
+let sellerList = [{
         "name": "Prontonio Pizza",
         "adress": "Musterstraße 69, 12345 Musterstadt",
         "favoriteDishes": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni"],
