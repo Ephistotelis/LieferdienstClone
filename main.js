@@ -42,10 +42,12 @@ let sellerList = [{
 
 */
 
-function renderSellerContent(index) {
-
+function renderSellerMain(index) {
+    let sellerDishes = document.getElementById('sellerDishesContent');
+    sellerDishes.innerHTML = '<div class="dishesCategorieFD">Beliebte Gerichte</div>'
     renderSellerInfo(index);
-    renderSellerDishes(index);
+    renderFavDishes(index);
+    renderSellerCategories(index);
 }
 
 function renderSellerInfo(index) {
@@ -60,13 +62,16 @@ function renderSellerInfo(index) {
     sellerDescribtion.innerHTML = `<p>${sellerList[index]["sellerInfo"]["sellerDescribtion"]}</p> `
 }
 
-function renderSellerDishes(index) {
-    // categorien, beliebte gerichte, weiter gerichte
+function renderSellerCategories(index) {
     templateCategories(index);
 }
 
 function renderFavDishes(index) {
+    templateFavDishes(index)
+}
 
+function renderSellerDishes(index) {
+    // categorien und die dazugehörigen gerichte rendern
 }
 
 function renderBasket() {
@@ -74,7 +79,18 @@ function renderBasket() {
 }
 
 function templateFavDishes(index) {
-
+    let sellerDishes = document.getElementById('sellerDishesContent');
+    for (let i = 0; i < sellerList[index]["favoriteDishes"].length; i++) {
+        sellerDishes.innerHTML +=
+            `
+        <div class="dishesSingleDish">
+                    <div class="singledishName">${sellerList[index]["favoriteDishes"][i]}</div>
+                    <div class="singledishInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima ab, alias facere eos ipsum veniam adipisci sapiente ea saepe. Ut a, adipisci sit excepturi sunt aliquid corrupti saepe labore?</div>
+                    <div class="singledishPrice">7,90€</div>
+                    <div class="singledishAmount">+</div>
+                </div>
+        `
+    }
 }
 
 function templateCategories(index) {
@@ -97,8 +113,3 @@ function templateSellerInfo(index) {
     `
 
 }
-
-
-
-
-// Seller JSON
