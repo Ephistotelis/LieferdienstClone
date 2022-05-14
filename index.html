@@ -9,9 +9,18 @@
     <link rel="stylesheet" href="style.css">
     <script src="SellerData.js"></script>
     <script src="main.js"></script>
+    <script src="template.js"></script>
+    <script src="renderContent.js"></script>
 </head>
 
 <body onload="renderSellerMain(0)">
+    <div class="testbutton">
+        testbutton für verschiedene anbieter
+        <div>
+            <button class="testbutton1" onclick="renderSellerMain(0)">1</button><button class="testbutton1" onclick="renderSellerMain(1)">2</button>
+        </div>
+
+    </div>
     <header>
         <div class="headerLogo">
             <img src="img/chess-41-64.png" alt="Logo">
@@ -96,24 +105,120 @@
                 <!-- Warenkorb content -->
                 <div class="contentsCard">
                     <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
 
-                        <div class="cardText">
-                            <p class="cardAmount">1</p>
-                            <p>Name des Gerichts</p>
                         </div>
-                        <p>9,99€</p>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
                     </div>
-                    <div class="cardBottom">
-                        <a href="#">Anmerkung Hinzufügen</a>
-                        <div class="cardBtn">
-                            <button>-</button><button>+</button>
-                        </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
 
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
                     </div>
                 </div>
                 <!-- Ende Warenkorb content -->
             </div>
-
             <div class="basketPayment">
                 <div class="paymentList">
                     <div class="listCurrentSum">
@@ -135,7 +240,6 @@
             </div>
         </div>
     </div>
-
     <footer>
         <div class="footerLinks">
             <a href="#">AGB</a><a href="#">Datenschutz</a><a href="#">Impressum</a><a href="#">Ethik-Hotline</a>
