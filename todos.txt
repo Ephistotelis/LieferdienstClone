@@ -25,6 +25,5 @@ CSS:
 
 
 Ziel 14.05:
--basket funtion render
+-basket ingle dish amount anzeigen
 -basket funktion berechnen
--price + description einfügen

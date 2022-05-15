@@ -12,9 +12,9 @@ function templateDishes(index, j, i) {
     return `        
         <div class="dishesSingleDish">
                     <div class="singledishName">${sellerList[index]["CategorieDishes"][i]["dish"][j]}</div>
-                    <div class="singledishInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima ab, alias facere eos ipsum veniam adipisci sapiente ea saepe. Ut a, adipisci sit excepturi sunt aliquid corrupti saepe labore?</div>
-                    <div class="singledishPrice">7,90€</div>
-                    <div class="singledishAmount" onclick="addToBasket(${index},${j},${i})">+</div>
+                    <div class="singledishInfo">${sellerList[index]["CategorieDishes"][i]["description"][j]}</div>
+                    <div class="singledishPrice">${sellerList[index]["CategorieDishes"][i]["price"][j]} €</div>
+                    <div class="singledishAmount" onclick="addToBasket(${index},${j},${i}), renderAddedAmount(${index},${j},${i})" id="singleAmount${j}${i}">+</div>
                 </div>
         `
 }
@@ -26,7 +26,7 @@ function templateSellerInfo(index) {
     <img src="img/mounting.png" alt="Fahrrad">
     <p>${sellerList[index]["sellerInfo"]["deliveryCosts"]}</p>
     <img src="img/shopping-bag-32.png" alt="Tasche">
-    <p>${sellerList[index]["sellerInfo"]["minOrderValue"]}</p>
+    <p>${sellerList[index]["sellerInfo"]["minOrderValue"]} €</p>
     `
 }
 
@@ -57,21 +57,21 @@ function templateBasket(index, j, i) {
 function templateBasketPayment() {
     return `
 <div class="paymentList">
-                    <div class="listCurrentSum">
+                    <div class="listCurrentSum" >
                         <p>Zwischensumme</p>
-                        <p>100,99€</p>
+                        <p id="listCurrentSum">100,99€</p>
                     </div>
-                    <div class="listDeleverycosts">
-                        <p>Lieferkosten</p>
-                        <p>4,50€</p>
+                    <div class="listDeliverycosts">
+                        <p id="text">Lieferkosten</p>
+                        <p id="listDeliverycosts">4,50€</p>
                     </div>
                     <div class="listWholeSum">
                         <p>Gesamt</p>
-                        <p>105,49€</p>
+                        <p id="listWholeSum">105,49€</p>
                     </div>
                 </div>
                 <div>
-                    <button class="paymentButton">Bezahlen (105,49€)</button>
+                    <button class="paymentButton" id="paymentButton">Bezahlen (105,49€)</button>
                 </div>
 `
 }

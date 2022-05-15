@@ -270,7 +270,7 @@ header {
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 25px;
     height: 100px;
 }
 
