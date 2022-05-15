@@ -1,10 +1,17 @@
 //amount adden, jeweilige gerichte zu json machen umd price, info zu adden
+
+
 let sellerList = [{
         "name": "Prontonio Pizza",
         "adress": "Musterstraße 69, 12345 Musterstadt",
-        "favoriteDishes": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni"],
-        "dishCategorie": ["Pizza", "Salate"],
+        "dishCategorie": ["Besondere Gerichte", "Pizza", "Salate"],
         "CategorieDishes": [{
+                "dish": ["Pizza Margherita*", "Feldsalat*", "Pizza Quattro Stagioni*"],
+                "price": [14, 16, 17],
+                "amount": [0, 0, 0],
+                "description": ["*Mit extra viel Belag!", "*Mit extra viel Belag!", "*Mit extra viel Belag!"]
+            },
+            {
                 "dish": ["Pizza Margherita", "Pizza Salami", "Pizza Quattro Stagioni", "Pizza Sucuk"],
                 "price": [12, 14, 15, 4],
                 "amount": [0, 0, 0, 0],
@@ -27,9 +34,14 @@ let sellerList = [{
     {
         "name": "Pasta Taxi",
         "adress": "Musterstraße 78, 54321 Musterstadt",
-        "favoriteDishes": ["Pasta Fungi", "Pasta con Pasta"],
-        "dishCategorie": ["Pasta", "Salate"],
+        "dishCategorie": ["Besondere Gerichte", "Pasta", "Salate"],
         "CategorieDishes": [{
+                "dish": ["Pasta Fungi*", "Feldsalat*", "Pasta Sucuk*"],
+                "price": [18, 10, 7],
+                "amount": [0, 0, 0],
+                "description": ["*Mit extra viel Belag!", "*Mit extra viel Belag!", "*Mit extra viel Belag!"]
+            },
+            {
                 "dish": ["Pasta Fungi", "Pasta con Pasta", "Pasta Sucuk", "Pasta con Tuna"],
                 "price": [16, 3, 5, 1],
                 "amount": [0, 0, 0, 0],

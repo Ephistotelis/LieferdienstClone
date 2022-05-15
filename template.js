@@ -19,17 +19,6 @@ function templateDishes(index, j, i) {
         `
 }
 
-function templateFavDishes(index, i) { // info, price und amount adden
-    return `        
-        <div class="dishesSingleDish">
-                    <div class="singledishName">${sellerList[index]["favoriteDishes"][i]}</div>
-                    <div class="singledishInfo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste minima ab, alias facere eos ipsum veniam adipisci sapiente ea saepe. Ut a, adipisci sit excepturi sunt aliquid corrupti saepe labore?</div>
-                    <div class="singledishPrice">7,90€</div>
-                    <div class="singledishAmount" onclick="addToBasket(${index},${i})">+</div>
-                </div>
-        `
-}
-
 function templateSellerInfo(index) {
     return `
     <img src="img/time-32.png" alt="Uhr">

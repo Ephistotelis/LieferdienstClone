@@ -13,12 +13,16 @@ function renderBasketStart() {
         // just because i´ve not implemented localstorage at this point
     let amount1 = sellerList[0]["CategorieDishes"][0];
     let amount2 = sellerList[0]["CategorieDishes"][1];
-    let amount3 = sellerList[1]["CategorieDishes"][0];
-    let amount4 = sellerList[1]["CategorieDishes"][1];
-    amount1["amount"] = [0, 0, 0, 0]
-    amount2["amount"] = [0, 0, 0]
-    amount3["amount"] = [0, 0, 0, 0]
+    let amount3 = sellerList[0]["CategorieDishes"][2];
+    let amount4 = sellerList[1]["CategorieDishes"][0];
+    let amount5 = sellerList[1]["CategorieDishes"][1];
+    let amount6 = sellerList[1]["CategorieDishes"][2];
+    amount1["amount"] = [0, 0, 0]
+    amount2["amount"] = [0, 0, 0, 0]
+    amount3["amount"] = [0, 0, 0]
     amount4["amount"] = [0, 0, 0]
+    amount5["amount"] = [0, 0, 0, 0]
+    amount6["amount"] = [0, 0, 0]
 }
 
 function renderBasket() {
@@ -42,23 +46,19 @@ function renderBasket() {
 function addToBasket(index, j, i) {
     let basket = document.getElementById('basketContents'); //controlle
     if (sellerList[index]["CategorieDishes"][i]["amount"][j] < 1) {
+        console.log('1')
         basket.innerHTML += templateBasket(index, j, i);
         sellerList[index]["CategorieDishes"][i]["amount"][j] += 1;
         renderDishAmount(index, j, i);
         renderBasket();
         return;
     } else {
+        console.log('2')
         sellerList[index]["CategorieDishes"][i]["amount"][j] += 1;
         renderDishAmount(index, j, i);
         renderBasket();
     }
 }
-
-
-
-
-
-
 
 function renderDishAmount(index, j, i) {
     let amountDish = document.getElementById(`cardAmount${j}${i}`);

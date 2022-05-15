@@ -1,8 +1,5 @@
 function renderSellerMain(index) {
-    let sellerDishes = document.getElementById('sellerDishesContent');
-    sellerDishes.innerHTML = '<div class="dishesCategorieFD">Beliebte Gerichte</div>'
     renderSellerInfo(index);
-    renderFavDishes(index);
     renderSellerCategories(index);
     renderSellerDishes(index);
     renderBasketStart();
@@ -20,16 +17,9 @@ function renderSellerInfo(index) {
     sellerDescription.innerHTML = `<p>${sellerList[index]["sellerInfo"]["sellerDescription"]}</p> `
 }
 
-function renderFavDishes(index) {
-    let sellerDishes = document.getElementById('sellerDishesContent');
-    for (let i = 0; i < sellerList[index]["favoriteDishes"].length; i++) {
-        sellerDishes.innerHTML += templateFavDishes(index, i)
-    }
-}
-
 function renderSellerCategories(index) {
     let sellerCategories = document.getElementById('sellerCategories');
-    sellerCategories.innerHTML = '<img src="img/zoom-32.png" alt="lupe">';
+    sellerCategories.innerHTML = `<img src="img/zoom-32.png" alt="lupe">`;
     for (let i = 0; i < sellerList[index]["dishCategorie"].length; i++) {
         sellerCategories.innerHTML += `<a href="#">${sellerList[index]["dishCategorie"][i]}</a>`
     }
@@ -38,6 +28,7 @@ function renderSellerCategories(index) {
 function renderSellerDishes(index) {
     // categorien und die dazugehörigen gerichte rendern
     let sellerDishes = document.getElementById('sellerDishesContent');
+    sellerDishes.innerHTML = "";
     for (let i = 0; i < sellerList[index]["dishCategorie"].length; i++) {
         sellerDishes.innerHTML += templateDishCategorie(index, i);
         renderDishes(index, i);
