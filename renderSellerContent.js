@@ -5,18 +5,19 @@ function renderSellerMain(index) {
     renderFavDishes(index);
     renderSellerCategories(index);
     renderSellerDishes(index);
+    renderBasketStart();
 }
 
 function renderSellerInfo(index) {
     let sellerAdress = document.getElementById('sellerAdress');
     let sellerName = document.getElementById('sellerName');
     let sellerInfo = document.getElementById('deliverInfos');
-    let sellerDescribtion = document.getElementById('sellerDescribtion');
+    let sellerDescription = document.getElementById('sellerDescription');
     let sellerCategories = document.getElementById('sellerCategories');
     sellerAdress.innerHTML = sellerList[index]["adress"]
     sellerName.innerHTML = sellerList[index]["name"]
     sellerInfo.innerHTML = templateSellerInfo(index);
-    sellerDescribtion.innerHTML = `<p>${sellerList[index]["sellerInfo"]["sellerDescribtion"]}</p> `
+    sellerDescription.innerHTML = `<p>${sellerList[index]["sellerInfo"]["sellerDescription"]}</p> `
 }
 
 function renderFavDishes(index) {

@@ -1,0 +1,139 @@
+just for testing deleting soon
+
+
+/////////////////////////////////////////////////
+
+         <div class="listCurrentSum">
+                        <p>Zwischensumme</p>
+                        <p>100,99€</p>
+                    </div>
+                    <div class="listDeleverycosts">
+                        <p>Lieferkosten</p>
+                        <p>4,50€</p>
+                    </div>
+                    <div class="listWholeSum">
+                        <p>Gesamt</p>
+                        <p>105,49€</p>
+                    </div>
+                </div>
+                <div>
+                    <button class="paymentButton">Bezahlen (105,49€)</button>
+                </div>
+
+//////////////////////////////////////////////////
+ <!-- Warenkorb content -->
+                <!--  <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="contentsCard">
+                    <div class="cardContent">
+                        <div class="cardTop">
+                            <div class="cardText">
+                                <p class="cardAmount">1</p>
+                                <p>Name des Gerichts</p>
+                            </div>
+                            <a href="#">Anmerkung Hinzufügen</a>
+
+                        </div>
+                        <div class="cardBottom">
+                            <p>9,99€</p>
+                            <div class="cardBtn">
+                                <button>-</button><button>+</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div> -->
+                <!-- Ende Warenkorb content -->

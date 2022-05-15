@@ -8,9 +8,10 @@
     <title>Lieferturm</title>
     <link rel="stylesheet" href="style.css">
     <script src="SellerData.js"></script>
-    <script src="main.js"></script>
+
     <script src="template.js"></script>
-    <script src="renderContent.js"></script>
+    <script src="renderSellerContent.js"></script>
+    <script src="renderBasket.js"></script>
 </head>
 
 <body onload="renderSellerMain(0)">
@@ -58,7 +59,7 @@
                         <img src="img/shopping-bag-32.png" alt="Tasche">
                         <p>Min. 20,00€</p> -->
                     </div>
-                    <div class="sellerDescribtion" id="sellerDescribtion">
+                    <div class="sellerDescription" id="sellerDescription">
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi distinctio at minus veniam non illum inventore quis dignissimos voluptatem quaerat, eligendi omnis harum. Placeat iste dolores, vel facere impedit delectus!</p>
                     </div>
                 </div>
@@ -101,141 +102,9 @@
             <div class="basketHeader">
                 <p>Warenkorb</p>
             </div>
-            <div class="basketContents">
-                <!-- Warenkorb content -->
-                <div class="contentsCard">
-                    <div class="cardContent">
-                        <div class="cardTop">
-                            <div class="cardText">
-                                <p class="cardAmount">1</p>
-                                <p>Name des Gerichts</p>
-                            </div>
-                            <a href="#">Anmerkung Hinzufügen</a>
-
-                        </div>
-                        <div class="cardBottom">
-                            <p>9,99€</p>
-                            <div class="cardBtn">
-                                <button>-</button><button>+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="contentsCard">
-                    <div class="cardContent">
-                        <div class="cardTop">
-                            <div class="cardText">
-                                <p class="cardAmount">1</p>
-                                <p>Name des Gerichts</p>
-                            </div>
-                            <a href="#">Anmerkung Hinzufügen</a>
-
-                        </div>
-                        <div class="cardBottom">
-                            <p>9,99€</p>
-                            <div class="cardBtn">
-                                <button>-</button><button>+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="contentsCard">
-                    <div class="cardContent">
-                        <div class="cardTop">
-                            <div class="cardText">
-                                <p class="cardAmount">1</p>
-                                <p>Name des Gerichts</p>
-                            </div>
-                            <a href="#">Anmerkung Hinzufügen</a>
-
-                        </div>
-                        <div class="cardBottom">
-                            <p>9,99€</p>
-                            <div class="cardBtn">
-                                <button>-</button><button>+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="contentsCard">
-                    <div class="cardContent">
-                        <div class="cardTop">
-                            <div class="cardText">
-                                <p class="cardAmount">1</p>
-                                <p>Name des Gerichts</p>
-                            </div>
-                            <a href="#">Anmerkung Hinzufügen</a>
-
-                        </div>
-                        <div class="cardBottom">
-                            <p>9,99€</p>
-                            <div class="cardBtn">
-                                <button>-</button><button>+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="contentsCard">
-                    <div class="cardContent">
-                        <div class="cardTop">
-                            <div class="cardText">
-                                <p class="cardAmount">1</p>
-                                <p>Name des Gerichts</p>
-                            </div>
-                            <a href="#">Anmerkung Hinzufügen</a>
-
-                        </div>
-                        <div class="cardBottom">
-                            <p>9,99€</p>
-                            <div class="cardBtn">
-                                <button>-</button><button>+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="contentsCard">
-                    <div class="cardContent">
-                        <div class="cardTop">
-                            <div class="cardText">
-                                <p class="cardAmount">1</p>
-                                <p>Name des Gerichts</p>
-                            </div>
-                            <a href="#">Anmerkung Hinzufügen</a>
-
-                        </div>
-                        <div class="cardBottom">
-                            <p>9,99€</p>
-                            <div class="cardBtn">
-                                <button>-</button><button>+</button>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-                <!-- Ende Warenkorb content -->
-            </div>
-            <div class="basketPayment">
+            <div class="basketContents" id="basketContents"></div>
+            <div class="basketPayment" id="basketPayment">
                 <div class="paymentList">
-                    <div class="listCurrentSum">
-                        <p>Zwischensumme</p>
-                        <p>100,99€</p>
-                    </div>
-                    <div class="listDeleverycosts">
-                        <p>Lieferkosten</p>
-                        <p>4,50€</p>
-                    </div>
-                    <div class="listWholeSum">
-                        <p>Gesamt</p>
-                        <p>105,49€</p>
-                    </div>
-                </div>
-                <div>
-                    <button class="paymentButton">Bezahlen (105,49€)</button>
                 </div>
             </div>
         </div>

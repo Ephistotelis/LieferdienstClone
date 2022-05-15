@@ -21,3 +21,10 @@ CSS:
 -warenkorb fixen
 -responsive design 
 -seller logo richtig machen(responsive)
+
+
+
+Ziel 14.05:
+-basket funtion render
+-basket funktion berechnen
+-price + description einfügen
