@@ -478,6 +478,19 @@ header {
     background-color: var(--basketButton);
 }
 
+.basketEmpty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.basketEmpty img {
+    width: 120px;
+    height: 120px;
+}
+
 
 /* Footer Maim*/
 

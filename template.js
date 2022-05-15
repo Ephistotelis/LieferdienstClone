@@ -14,7 +14,7 @@ function templateDishes(index, j, i) {
                     <div class="singledishName">${sellerList[index]["CategorieDishes"][i]["dish"][j]}</div>
                     <div class="singledishInfo">${sellerList[index]["CategorieDishes"][i]["description"][j]}</div>
                     <div class="singledishPrice">${sellerList[index]["CategorieDishes"][i]["price"][j]} €</div>
-                    <div class="singledishAmount" onclick="addToBasket(${index},${j},${i}), renderAddedAmount(${index},${j},${i})" id="singleAmount${j}${i}">+</div>
+                    <div class="singledishAmount" onclick="addToBasket(${index},${j},${i},'+'), renderAddedAmount(${index},${j},${i})" id="singleAmount${j}${i}">+</div>
                 </div>
         `
 }
@@ -24,15 +24,15 @@ function templateSellerInfo(index) {
     <img src="img/time-32.png" alt="Uhr">
     <p>${sellerList[index]["sellerInfo"]["deliveryTime"]}</p>
     <img src="img/mounting.png" alt="Fahrrad">
-    <p>${sellerList[index]["sellerInfo"]["deliveryCosts"]}</p>
+    <p>${sellerList[index]["sellerInfo"]["deliveryCosts"].toFixed(2)} €</p>
     <img src="img/shopping-bag-32.png" alt="Tasche">
-    <p>${sellerList[index]["sellerInfo"]["minOrderValue"]} €</p>
+    <p>${sellerList[index]["sellerInfo"]["minOrderValue"].toFixed(2)} €</p>
     `
 }
 
 function templateBasket(index, j, i) {
     return `
-    <div class="contentsCard">
+    <div class="contentsCard" id="contentsCard${j}${i}">
     <div class="cardContent">
         <div class="cardTop">
             <div class="cardText">
@@ -43,9 +43,9 @@ function templateBasket(index, j, i) {
 
         </div>
         <div class="cardBottom">
-            <p id="dishPrice${j}${i}">${sellerList[index]["CategorieDishes"][i]["price"][j]}€</p>
+            <p id="dishPrice${j}${i}">${sellerList[index]["CategorieDishes"][i]["price"][j].toFixed(2)}€</p>
             <div class="cardBtn">
-                <button>-</button><button>+</button>
+                <button onclick="addToBasket(${index}, ${j}, ${i},'-')">-</button><button onclick="addToBasket(${index},${j},${i},'+')">+</button>
             </div>
 
         </div>
@@ -71,7 +71,16 @@ function templateBasketPayment() {
                     </div>
                 </div>
                 <div>
-                    <button class="paymentButton" id="paymentButton">Bezahlen (105,49€)</button>
+                    <button class="paymentButton" id="paymentButton" onclick="submitOrder()">Bezahlen (105,49€)</button>
                 </div>
 `
+}
+
+function templateBasketEmpty() {
+    return ` 
+    <div class="basketEmpty">
+    <img src="img/shopping_cart_red.png" alt="">
+    <p>Zur Zeit haben sie nichts ausgewählt!</p>
+</div>
+    `
 }
